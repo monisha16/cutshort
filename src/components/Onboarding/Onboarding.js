@@ -28,6 +28,17 @@ function Onboarding() {
     }
   ]
   const [tabNumber, setTabNumber] = useState(0);
+  const [user, setUser] = useState({
+    firstName: '',
+    displayName: '',
+  })
+  const [workSpace, setWorkSpace] = useState({
+    workspaceName: '',
+    workspaceURL: '',
+  })
+  const [usage, setUsage] = useState({
+    usage: ''
+  })
   const [formState, setFormState] = useState({
     firstName: '',
     displayName: '',
@@ -37,24 +48,17 @@ function Onboarding() {
   });
 
   useEffect(()=>{
-    setFormState(
-      {
-        firstName: '',
-        displayName: '',
-        workspaceName: '',
-        workspaceURL: '',
-        usage: '',
-      }
-    )
-  },[])
-
-  function handleFormSubmit(e){
-    e.preventDefault();
-    console.log(e.target.value)
-  }
+    console.log(formState)
+  },[formState])
 
   function handleClick(){
-
+    setFormState({...user,...workSpace,...usage})
+  }
+  function handleFormSubmit(e){
+    e.preventDefault();
+    console.log("formState", formState);
+    if (tabNumber === '3') return;
+    setTabNumber((tab) => tab + 1);
   }
 
   return (
@@ -68,15 +72,16 @@ function Onboarding() {
       </div>
 
       <div className={styles.form_section}>
-        <form style={{width:'100%'}} onSubmit={handleFormSubmit} >
+        
           { tabNumber === 0 &&
           <>
+          <form onSubmit={handleFormSubmit}>
             <Input 
               id="text"
               label="First Name"
               placeholder='Steve Jobs'
-              value={formState.text}
-              // onChange={(value) => setFormState('text', value)}
+              value={user.firstName}
+              onChange={(value) => setUser({...user, 'firstName': value })}
               minLength="2"
               maxLength="25"
             />
@@ -84,22 +89,25 @@ function Onboarding() {
               id="text"
               label="Display Name"
               placeholder='Steve'
-              value={formState.text}
-              // onChange={(value) => setFormState('text', value)}
+              value={user.displayName}
+              onChange={(value) => setUser({...user,'displayName': value})}
               minLength="2"
               maxLength="25"
             />
-              <Button text="Create Workspace" tabNumber={tabNumber} onClick={handleClick} /> 
+            <Button text="Create Workspace" handleClick={handleClick} /> 
+          </form>
           </>
+        
           }
           {tabNumber === 1 &&
             <>
+          <form onSubmit={handleFormSubmit}>
               <Input
                 id="text"
                 label="Workspace Name"
                 placeholder='Eden'
-                value={formState.text}
-                // onChange={(value) => setFormState('text', value)}
+                value={workSpace.workspaceName}
+                onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceName': value })}
                 minLength="2"
                 maxLength="25"
               />
@@ -107,22 +115,25 @@ function Onboarding() {
                 id="text"
                 label="Workspace URL (optional)"
                 placeholder='Example'
-                value={formState.text}
-                // onChange={(value) => setFormState('text', value)}
+                value={workSpace.workspaceURL}
+                onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceURL': value })}
                 minLength="2"
                 maxLength="25"
               />
-              <Button text="Create Workspace" />
+            <Button text="Create Workspace" handleClick={handleClick} />
+            </form>
             </>
           }
           {tabNumber === 2 &&
           <>
+          <form onSubmit={handleFormSubmit}>
             <span>Random Card</span>
-            <Button text="Create Workspace" />
-          </>
+            <Button text="Create Workspace" handleClick={handleClick} />
+          </form>
+          </> 
           
           }
-        </form>
+        
       </div>
     </div>
   )
