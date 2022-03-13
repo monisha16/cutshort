@@ -14,3 +14,33 @@ body {
 code {
   font-family: 'Inter','Nunito', sans-serif,source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    html, body {
+        font-size: 70%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    html, body {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1399px) {
+    html, body {
+        font-size: 90%;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1920px) {
+    html, body {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (min-width: 1921px)  {
+    html, body {
+        font-size: 120%;
+    }
+}
