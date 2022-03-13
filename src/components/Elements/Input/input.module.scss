@@ -1,0 +1,20 @@
+.FormInput{
+    display:flex;
+    flex-direction: column;
+
+    &__label{
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-primary-text-dark);
+        margin-bottom: .25rem;
+    }
+    &__input{
+        height: 2.5rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: 400;
+        border: 0.1rem solid var(--color-primary-text-medium);
+        border-radius: 0.2rem;
+        margin-bottom: 1rem;
+    }
+}
