@@ -37,7 +37,7 @@ function Onboarding() {
     {
       id: 1,
       title: 'For myself',
-      text: 'Write better.Think more clearly.Stay organized.'
+      text: 'Write better. Think more clearly. Stay organized.'
     },
     {
       id: 2,

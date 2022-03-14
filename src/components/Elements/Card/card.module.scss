@@ -1,16 +1,9 @@
 .Container{
-    //     display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-around;
-    // height: 10rem;
-    // width: 30rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     height: 10rem;
-    /* width: 30rem; */
     margin-bottom: 2rem;
 }
 .Card{
@@ -41,5 +34,10 @@
     &:hover{
         // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
         box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 24px;
+    }
+}
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+    .Card{
+        width:12.5rem;
     }
 }
