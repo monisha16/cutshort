@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React,{ useState} from 'react';
 import StepProgress from '../StepProgress/StepProgress';
 import Input from '../Elements/Input/Input';
 import Button from '../Elements/Button/Button';
@@ -62,24 +62,16 @@ function Onboarding() {
     usage: '',
   });
 
-  useEffect(()=>{
-    console.log(formState)
-  },[formState])
 
   function handleClick(){
     setFormState({...user,...workSpace,...usage});
-    // if (tabNumber === 3) setTabNumber((tab) => tab + 1);
+    if (tabNumber === 3) setTabNumber((tab) => tab + 1);
+    if (tabNumber === 4) console.log(formState);
   }
   function handleFormSubmit(e){
     e.preventDefault();
-    // console.log("formState", formState);
-    if (tabNumber === '4') return;
+    if (tabNumber === 4) return;
     setTabNumber((tab) => tab + 1);
-  }
-
-  function handleCardSelect(){
-    console.log("usage",usage)
-
   }
 
   return (
@@ -95,8 +87,7 @@ function Onboarding() {
       <div className={styles.form_section}>
         
           { tabNumber === 1 &&
-          <>
-            <form onSubmit={handleFormSubmit} style={{width:'20rem'}}>
+            <form onSubmit={handleFormSubmit} style={{width: '100%'}}>
               <Input 
                 id="text"
                 label="First Name"
@@ -116,56 +107,51 @@ function Onboarding() {
                 maxLength="25"
               />
               <Button text="Create Workspace" handleClick={handleClick} /> 
-            </form>
-          </>
-        
+            </form>        
           }
           {tabNumber === 2 &&
-          <>
-          <form onSubmit={handleFormSubmit} style={{ width: '20rem' }}>
-              <Input
-                id="text"
-                label="Workspace Name"
-                placeholder='Eden'
-                value={workSpace.workspaceName}
-                onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceName': value })}
-                minLength="2"
-                maxLength="25"
-              />
-              <Input
-                id="text"
-                label="Workspace URL (optional)"
-                placeholder='Example'
-                value={workSpace.workspaceURL}
-                onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceURL': value })}
-                minLength="2"
-                maxLength="25"
-              />
-            <Button text="Create Workspace" handleClick={handleClick} />
-          </form>
-          </>
+            <form onSubmit={handleFormSubmit} style={{ width: '100%' }}>
+                <Input
+                  id="text"
+                  label="Workspace Name"
+                  placeholder='Eden'
+                  value={workSpace.workspaceName}
+                  onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceName': value })}
+                  minLength="2"
+                  maxLength="25"
+                />
+                <Input
+                  id="text"
+                  label="Workspace URL (optional)"
+                  placeholder='Example'
+                  value={workSpace.workspaceURL}
+                  onChange={(value) => setWorkSpace({ ...workSpace, 'workspaceURL': value })}
+                  minLength="2"
+                  maxLength="25"
+                />
+              <Button text="Create Workspace" handleClick={handleClick} />
+            </form>
           }
           {tabNumber === 3 &&
-          <div className={styles.tabThree}>
-            <div className={styles.cardsContainer}>
-              {usageCards.map((card) => {
-                return <Card key={card.id} card={card} setUsage={setUsage} handleCardSelect={handleCardSelect} />
-              })}
+            <div className={styles.tabThree}>
+              <div className={styles.cardsContainer}>
+                {usageCards.map((card) => {
+                  return <Card key={card.id} isActive={card.id === usage.usage} card={card} setUsage={setUsage} /> //handleCardSelect={handleCardSelect}
+                })}
+              </div>
+              <Button text="Create Workspace" handleClick={handleClick} />
             </div>
-            <Button text="Create Workspace" handleClick={handleClick} />
-          </div>
           }
           { tabNumber === 4 &&
-          <>
-              <div className={styles.tabFour}>
-                <div className={styles.tabFour__img}>
-                  <img src={check} alt="check" />
-                </div>
-                <h1>Congratulations, {formState.displayName}!</h1>
-                <p>You have completed onboarding, you can start using the Eden!</p>
+            <div className={styles.tabFour}>
+              <div className={styles.tabFour__img}>
+                <img src={check} alt="check" />
               </div>
+              <h1>Congratulations, {formState.displayName}!</h1>
+              <p>You have completed onboarding, you can start using the Eden!</p>
+              
               <Button text="Launch Eden" handleClick={handleClick} />
-          </>
+            </div>
           }
         
       </div>
