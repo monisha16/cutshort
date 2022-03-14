@@ -39,8 +39,6 @@
     margin-bottom: 2rem;
 }
 
-
-
 .tabThree{
     display: flex;
     flex-direction: column;
@@ -56,6 +54,7 @@
         margin-bottom: 2rem;  
     }
 }
+
 @media only screen and (min-width: 200px) and (max-width: 600px) {
     .tabHeader{
         &__main{
