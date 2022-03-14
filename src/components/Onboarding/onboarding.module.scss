@@ -38,6 +38,9 @@
     height: 10rem;
     margin-bottom: 2rem;
 }
+
+
+
 .tabThree{
     display: flex;
     flex-direction: column;
@@ -55,13 +58,15 @@
         width: 4rem;
         height: 4rem;
         position: relative;
-        margin: 0 auto;
+        // margin: 0 auto;
+        margin-bottom: 2rem;
         img{
             width: 24px;
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%, -50%);
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            filter: invert(96%) sepia(1%) saturate(1955%) hue-rotate(194deg) brightness(103%) contrast(95%)
         }
     }
 }
