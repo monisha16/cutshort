@@ -4,7 +4,8 @@ import Input from '../Elements/Input/Input';
 import Button from '../Elements/Button/Button';
 import Card from '../Elements/Card/Card';
 import styles from './onboarding.module.scss';
-import check from '../../assests/icons/check.svg';
+// import check from '../../assests/icons/check.svg';
+import check from '../../assests/icons/check.PNG';
 
 
 function Onboarding() {

@@ -53,20 +53,6 @@
     justify-content: center;
     align-items: center;
     &__img{
-        background-color: var(--color-primary-buttons);
-        border-radius: 50%;
-        width: 4rem;
-        height: 4rem;
-        position: relative;
-        // margin: 0 auto;
-        margin-bottom: 2rem;
-        img{
-            width: 24px;
-            position: absolute;
-            top: 50%;
-            right: 50%;
-            transform: translate(50%, -50%);
-            filter: invert(96%) sepia(1%) saturate(1955%) hue-rotate(194deg) brightness(103%) contrast(95%)
-        }
+        margin-bottom: 2rem;  
     }
 }

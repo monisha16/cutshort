@@ -10,7 +10,9 @@
     border: none;
     border-radius: .2rem;
     &:hover{
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+        // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 24px;
+        background-color: #483d9e;
         cursor:pointer;
     }
 }
