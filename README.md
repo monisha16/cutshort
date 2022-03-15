@@ -17,5 +17,5 @@
    ```bash
    npm run start
    ```
-   
-## 🎨 Design Mockup by Eren, [Onboarding](https://dribbble.com/shots/15669113-Onboarding-Exploration)
+   #
+ 🎨 Design Mockup by Eren, [Onboarding](https://dribbble.com/shots/15669113-Onboarding-Exploration)
