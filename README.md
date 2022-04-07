@@ -17,5 +17,7 @@
    ```bash
    npm run start
    ```
+## :bulb: Improvements required
+   - Make the form Dynamic
    #
  🎨 Design Mockup by Eren, [Onboarding](https://dribbble.com/shots/15669113-Onboarding-Exploration)
